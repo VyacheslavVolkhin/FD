@@ -1,0 +1,81 @@
+/* ----------------------------------- *\
+		common styles
+\* ----------------------------------- */
+@keyframes fadein {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+@keyframes fadeinslide {
+    from {opacity: 0;transform: translate(0, -50px);}
+    to {opacity: 1;transform: translate(0, 0px);}
+}
+.i {
+	display: inline-block;
+	vertical-align: middle;
+	transition: none;
+}
+.js-bg-box {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	.js-bg-photo {
+		display: block;
+		position: absolute;
+		top: 0;left: 0;
+		width: 100%;height: 100%;
+		object-fit: cover;
+	}
+	img:not(.js-bg-photo) {
+		display: block;
+		width: 100%;
+		position: absolute;
+		top: 0;left: 0;
+	}
+}
+.js-btn-toggle.active+.js-popup-block {display: block !important;}
+.js-popup-block {-webkit-animation: fadein ease 0.3s;animation: fadein ease 0.3s;}
+.js-tab-block {
+	display: none;
+	animation: fadein ease 0.2s;
+	&.active {
+		display: block;
+	}
+}
+.items-wrap {
+	display: flex;
+	flex-wrap: wrap;
+	position: relative;
+	min-width: 100%;
+}
+.item-wrap {
+	width: 100%;
+	position: relative;
+	break-inside: avoid-column;
+	display: block;
+	animation: fadein ease 0.2s;
+	&.wrap-more {
+		&~.item-wrap {
+			display: none;
+		}
+		&.active {
+			display: none;
+			&~.item-wrap {
+				display: block;
+			}
+		}
+	}
+}
+.sl-wrap~.sl-wrap {
+	display: none;
+}
+@media (max-width: 1023px) {
+	.elm-hidden-mobile {
+		display: none;
+	}
+}
+@media (min-width: 1024px) {
+	.elm-hidden-desktop {
+		display: none;
+	}
+}

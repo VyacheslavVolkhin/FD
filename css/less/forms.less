@@ -1,0 +1,51 @@
+/* ----------------------------------- *\
+			forms elements styles
+\* ----------------------------------- */
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+input[type="range"],
+input[type="search"],
+input[type="tel"],
+input[type="url"] {
+	
+}
+textarea {
+	height: 100px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	resize: none;
+}
+.btn,
+button,
+input[type="submit"] {
+	
+}
+.frm-row,
+.frm-field,
+.frm-row-submit {
+	position: relative;
+	line-height: 1;
+	&:after {content: ".";display: block;height: 0;clear: both;visibility: hidden;font-size: 0;}
+}
+.frm-select {
+	position: relative;
+	display: block;
+	overflow: hidden;
+	input {
+		display: block;
+		position: absolute;
+		top: 0;left: 0;
+		width: 0;height: 0;
+		opacity: 0;
+		margin: 0;
+		padding: 0;
+	}
+	label {
+		display: block;
+		position: relative;
+		cursor: pointer;
+	}
+}
