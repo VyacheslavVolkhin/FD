@@ -330,6 +330,8 @@ body {
   font-size: 16px;
   line-height: 24px;
   padding: 15px 15px 9px 35px;
+  position: relative;
+  overflow: hidden;
 }
 .nav .menu-wrap ul {
   display: -webkit-box;
@@ -707,6 +709,8 @@ body {
     padding-top: 18px;
     padding-bottom: 26px;
     border-bottom: 1px solid var(--clr-border);
+    position: relative;
+    overflow: hidden;
   }
   .main-menu-wrap .menu-title {
     padding-left: 110px;
