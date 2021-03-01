@@ -43,13 +43,23 @@ $(document).ready(function(){
         $(this).find('.submenu-wrap').removeClass('active');
         $(this).find('li.open').removeClass('open');
         $('.nav li:not(.open) .menu-item').css('background', 'transparent');
+
+        $(this).removeClass('submenu-last-active');
+        $('.submenu-last-wrap').removeClass('active');
+        $('.nav .submenu-wrap li.open').removeClass('open');
     })
     $('.nav .btn-action-ico.ico-back').on('click', function() {
-        $('.nav').removeClass('active');
-        $('.nav').removeClass('submenu-active');
-        $('.nav').find('.submenu-wrap').removeClass('active');
-        $('.nav').find('li.open').removeClass('open');
-        $('.nav li:not(.open) .menu-item').css('background', 'transparent');
+        if ($('.nav').hasClass('submenu-last-active')) {
+            $('.nav').removeClass('submenu-last-active');
+            $('.submenu-last-wrap').removeClass('active');
+            $('.nav .submenu-wrap li.open').removeClass('open');
+        } else {
+            $('.nav').removeClass('active');
+            $('.nav').removeClass('submenu-active');
+            $('.nav').find('.submenu-wrap').removeClass('active');
+            $('.nav').find('li.open').removeClass('open');
+            $('.nav li:not(.open) .menu-item').css('background', 'transparent');
+        }
         return false;
     })
     $('.main-menu-wrap .menu-item').on('click', function() {
@@ -59,7 +69,23 @@ $(document).ready(function(){
         $('.nav').addClass('submenu-active').find('.submenu-wrap').removeClass('active');
         $('.nav .submenu-wrap[data-submenu="'+curMenu+'"]').addClass('active');
         $('.nav li:not(.open) .menu-item').css('background', 'transparent');
+
+        $('.nav').removeClass('submenu-last-active');
+        $('.submenu-last-wrap').removeClass('active');
+        $('.nav .submenu-wrap li.open').removeClass('open');
         return false;
+    })
+    $('.submenu-wrap .menu-item-inner').on('click', function() {
+        if ($(this).parent('li').attr('data-submenu')) {
+            let curLastMenu = $(this).parent().attr('data-submenu');
+            $('.nav .submenu-wrap li.open').removeClass('open');
+            $(this).parent().addClass('open');
+            $('.nav').addClass('submenu-last-active').find('.submenu-last-wrap').removeClass('active');
+            $('.nav .submenu-last-wrap[data-submenu="'+curLastMenu+'"]').addClass('active');
+            return false;
+        } else {
+
+        }
     })
     $('.main-menu-wrap [data-bg]').each(function() {
         let bgColor = $(this).attr('data-bg');
