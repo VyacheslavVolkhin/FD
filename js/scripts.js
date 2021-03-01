@@ -21,6 +21,14 @@ $(document).ready(function(){
 	};
 
 
+	//img to bg
+    $('.js-bg-box').each(function() {
+        var picUrl = $(this).find('.js-bg-photo').attr('src');
+        $(this).css('background-image', 'url('+picUrl+')');
+        $(this).find('.js-bg-photo').hide();
+    })
+
+
 	//main menu
     $('.js-menu-toggle').on('click', function() {
         $('body').toggleClass('nav-show');

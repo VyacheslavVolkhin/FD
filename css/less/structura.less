@@ -3,7 +3,7 @@
 \* ----------------------------------- */
 
 .wrap {
-    padding-bottom: 9999px;
+    padding-bottom: 400px;
 }
 html, body {
 	margin: 0;
@@ -145,14 +145,23 @@ html, body {
             background: url(../img/icons/ico-location.svg) center no-repeat;
             background-size: 18px auto;
         }
+        a {
+            color: var(--clr-base);
+            &:hover {
+                color: var(--clr-att);
+            }
+        }
     }
     .location-city {
         display: block;
         font-size: 16px;
         line-height: 16px;
         font-weight: bold;
-        color: #EA4C42;
         width: 100%;
+        color: var(--clr-att);
+        a {
+            color: var(--clr-att);
+        }
     }
     .location-address {
         display: block;
@@ -275,15 +284,24 @@ html, body {
             background: url(../img/icons/ico-location.svg) center no-repeat;
             background-size: 18px auto;
         }
+        a {
+            color: var(--clr-base);
+            &:hover {
+                color: var(--clr-att);
+            }
+        }
     }
     .location-city {
         display: block;
         font-size: 16px;
         line-height: 24px;
         font-weight: bold;
-        color: #EA4C42;
         width: 100%;
         margin-bottom: 2px;
+        color: var(--clr-att);
+        a {
+            color: var(--clr-att);
+        }
     }
     .location-address {
         display: block;
@@ -662,7 +680,7 @@ html, body {
 }
 @media (min-width: 1024px) {
     .page, .inner-wrap {
-        padding-left: 120px;
+        padding-left: 168px;
         padding-right: 30px;
     }
     .wrap {
@@ -949,7 +967,7 @@ html, body {
                     background-size: 32px auto;
                 }
             }
-            &[data-count]:after {
+            &.button-count .button-counter {
                 min-width: 16px;
                 padding: 0 5px;
                 height: 16px;
@@ -963,8 +981,18 @@ html, body {
 }
 @media (min-width: 1600px) {
     .page, .inner-wrap {
-        padding-left: 120px;
+        padding-left: 168px;
         padding-right: 120px;
+    }
+}
+@media (min-width: 1800px) {
+    .header {
+        .phone-wrap:last-child {
+            padding-right: 0;
+        }
+        .messages-wrap {
+            padding-left: 0;
+        }
     }
 }
 @media (min-width: 1920px) {

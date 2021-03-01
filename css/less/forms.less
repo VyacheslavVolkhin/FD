@@ -74,35 +74,95 @@ input[type="submit"] {
         }
     }
     &.ico-compare {
-        &:before {
+        &:before, &:after {
             background: url(../img/icons/ico-compare.svg) center no-repeat;
             background-size: 32px auto;
         }
+        &:after {
+            background: url(../img/icons/ico-compare-active.svg) center no-repeat;
+            opacity: 0;
+        }
+        &:hover, &.active {
+            &:before {
+                opacity: 0;
+            }
+            &:after {
+                opacity: 1;
+            }
+        }
     }
     &.ico-user {
-        &:before {
+        &:before, &:after {
             background: url(../img/icons/ico-user.svg) center no-repeat;
             background-size: 22px auto;
         }
+        &:after {
+            background: url(../img/icons/ico-user-active.svg) center no-repeat;
+            opacity: 0;
+        }
+        &:hover, &.active {
+            &:before {
+                opacity: 0;
+            }
+            &:after {
+                opacity: 1;
+            }
+        }
     }
     &.ico-cart {
-        &:before {
+        &:before, &:after {
             background: url(../img/icons/ico-cart.svg) center no-repeat;
             background-size: 28px auto;
         }
+        &:after {
+            background: url(../img/icons/ico-cart-active.svg) center no-repeat;
+            opacity: 0;
+        }
+        &:hover, &.active {
+            &:before {
+                opacity: 0;
+            }
+            &:after {
+                opacity: 1;
+            }
+        }
     }
     &.ico-phone {
-        &:before {
+        &:before, &:after {
             background: url(../img/icons/ico-phone.svg) center no-repeat;
             background-size: 26px auto;
         }
+        &:after {
+            background: url(../img/icons/ico-phone-active.svg) center no-repeat;
+            opacity: 0;
+        }
+        &:hover, &.active {
+            &:before {
+                opacity: 0;
+            }
+            &:after {
+                opacity: 1;
+            }
+        }
     }
     &.ico-fav {
-        &:before {
+        &:before, &:after {
             background: url(../img/icons/ico-fav.svg) center no-repeat;
             background-size: 26px auto;
         }
         &:after {
+            background: url(../img/icons/ico-fav-active.svg) center no-repeat;
+            opacity: 0;
+        }
+        &:hover, &.active {
+            &:before {
+                opacity: 0;
+            }
+            &:after {
+                opacity: 1;
+            }
+        }
+/*        &:after {
             background: url(../img/icons/ico-fav-active.svg) center no-repeat;
             background-size: 26px auto;
             opacity: 0;
@@ -114,7 +174,7 @@ input[type="submit"] {
             &:after {
                 opacity: 1;
             }
-        }
+        }*/
     }
     &.ico-menu {
         &:not(.active) {
@@ -193,10 +253,10 @@ input[type="submit"] {
             .t-rotate(180deg);
         }
     }
-    &[data-count] {
+    &.button-count {
         overflow: visible;
-        &:after {
-            content: attr(data-count);
+        .button-counter {
+            position: absolute;
             top: 50%;
             left: 50%;
             right: auto;
@@ -213,6 +273,8 @@ input[type="submit"] {
             border-radius: 5px;
             margin-top: -13px;
             margin-left: 6px;
+            display: block;
+            float: left;
         }
     }
 }
