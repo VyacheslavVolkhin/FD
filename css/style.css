@@ -703,13 +703,19 @@ body {
     overflow: hidden;
   }
   .nav-show .nav {
-    display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
   .header .btn-action-ico.ico-menu {
     z-index: 130;
   }
   .nav {
     display: none;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     -webkit-animation: fadeinslide ease 0.2s;
             animation: fadeinslide ease 0.2s;
     position: fixed;
@@ -732,6 +738,10 @@ body {
     right: 0;
     background: #fff;
   }
+  .nav .submenu-inner-wrap {
+    max-height: 100%;
+    overflow: auto;
+  }
   .nav .logo-wrap {
     display: none;
   }
@@ -739,6 +749,8 @@ body {
     border-bottom: 1px solid var(--clr-border);
     line-height: 1;
     position: relative;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
   }
   .nav.submenu-active {
     left: -100%;
@@ -751,6 +763,14 @@ body {
   .nav .menu-wrap,
   .nav .about-wrap {
     width: 50%;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+  }
+  .nav .main-menu-wrap {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    overflow: auto;
   }
   .nav .btn-action-ico.ico-menu {
     display: block;
@@ -1113,6 +1133,8 @@ body {
   .submenu-last-outer-wrap .submenu-inner-wrap,
   .submenu-outer-wrap .submenu-inner-wrap {
     width: 345px;
+    max-height: 100%;
+    overflow: auto;
   }
   .submenu-last-outer-wrap {
     z-index: -1;
@@ -1152,6 +1174,45 @@ body {
     transition: all ease 1s;
     -webkit-transition-delay: 0s;
             transition-delay: 0s;
+  }
+}
+@media (min-width: 1024px) and (max-height: 899px) {
+  .main-menu-wrap {
+    padding-top: 0;
+  }
+  .main-menu-wrap .menu-item {
+    min-height: 38px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+  }
+  .nav {
+    padding-top: 50px;
+  }
+  .nav .logo-full {
+    padding-top: 5px;
+    height: 60px;
+  }
+  .nav .logo-full .logo-images img {
+    height: 18px;
+    width: auto;
+  }
+  .nav .logo-full .logo-images img:last-child {
+    height: 18px;
+  }
+  .nav .logo-full .logo-text {
+    padding-top: 16px;
+  }
+  .nav .logo-small {
+    height: 60px;
+  }
+  .nav .logo-small img {
+    width: 40px;
+  }
+  .nav .frm-main-search {
+    height: 50px;
+  }
+  .nav .frm-main-search input {
+    height: 50px;
   }
 }
 @media (min-width: 1024px) and (max-width: 1799px) {

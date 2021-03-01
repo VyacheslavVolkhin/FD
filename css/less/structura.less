@@ -517,7 +517,7 @@ html, body {
     .nav-show {
         overflow: hidden;
         .nav {
-            display: block;
+            display: flex;
         }
     }
     .header {
@@ -529,6 +529,7 @@ html, body {
     }
     .nav {
         display: none;
+        flex-direction: column;
         animation: fadeinslide ease 0.2s;
         position: fixed;
         padding-top: 80px;
@@ -548,6 +549,10 @@ html, body {
             right: 0;
             background: #fff;
         }
+        .submenu-inner-wrap {
+            max-height: 100%;
+            overflow: auto;
+        }
         .logo-wrap {
             display: none;
         }
@@ -555,6 +560,7 @@ html, body {
             border-bottom: 1px solid var(--clr-border);
             line-height: 1;
             position: relative;
+            flex-shrink: 0;
         }
         &.submenu-active {
             left: -100%;
@@ -564,6 +570,11 @@ html, body {
         }
         .main-menu-wrap, .search-wrap, .menu-wrap, .about-wrap {
             width: 50%;
+            flex-shrink: 0;
+        }
+        .main-menu-wrap {
+            flex: 1;
+            overflow: auto;
         }
         .btn-action-ico {
             &.ico-menu {
@@ -889,6 +900,8 @@ html, body {
         }
         .submenu-inner-wrap {
             width: 345px;
+            max-height: 100%;
+            overflow: auto;
         }
     }
     .submenu-last-outer-wrap {
@@ -927,6 +940,47 @@ html, body {
                 opacity: 1;
                 transition: all ease 1s;
                 transition-delay: 0s;
+            }
+        }
+    }
+}
+@media (min-width: 1024px) and (max-height: 899px) {
+    .main-menu-wrap {
+        padding-top: 0;
+        .menu-item {
+            min-height: 38px;
+            padding-top: 7px;
+            padding-bottom: 7px;
+        }
+    }
+    .nav {
+        padding-top: 50px;
+        .logo-full {
+            padding-top: 5px;
+            height: 60px;
+            .logo-images {
+                img {
+                    height: 18px;
+                    width: auto;
+                    &:last-child {
+                        height: 18px;
+                    }
+                }
+            }
+            .logo-text {
+                padding-top: 16px;
+            }
+        }
+        .logo-small {
+            height: 60px;
+            img {
+                width: 40px;
+            }
+        }
+        .frm-main-search {
+            height: 50px;
+            input {
+                height: 50px;
             }
         }
     }
