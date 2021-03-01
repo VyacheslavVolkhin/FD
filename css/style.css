@@ -1031,6 +1031,8 @@ body {
   }
   .nav:not(.active) .main-menu-wrap .menu-title:before {
     opacity: 0;
+    -webkit-transition: none;
+    transition: none;
   }
   .nav.submenu-active .submenu-outer-wrap {
     width: 345px;
@@ -1146,10 +1148,10 @@ body {
   }
   .main-menu-wrap .menu-title:before {
     opacity: 1;
-    -webkit-transition: all ease 0.2s;
-    transition: all ease 0.2s;
-    -webkit-transition-delay: 0.2s;
-            transition-delay: 0.2s;
+    -webkit-transition: all ease 1s;
+    transition: all ease 1s;
+    -webkit-transition-delay: 0s;
+            transition-delay: 0s;
   }
 }
 @media (min-width: 1024px) and (max-width: 1799px) {
@@ -1294,10 +1296,6 @@ body {
   line-height: 1;
   color: #000;
   font-size: 12px;
-  -webkit-transition: -webkit-box-shadow ease 0.2s;
-  transition: -webkit-box-shadow ease 0.2s;
-  transition: box-shadow ease 0.2s;
-  transition: box-shadow ease 0.2s, -webkit-box-shadow ease 0.2s;
 }
 .item-catalog .cat-photo-wrap,
 .item-catalog .cat-title-wrap,
@@ -1337,8 +1335,10 @@ body {
   right: 0;
   background: #fff;
   padding: 0 24px 64px 20px;
-  -webkit-box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
-          box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+  -webkit-transition: -webkit-box-shadow ease 0.2s;
+  transition: -webkit-box-shadow ease 0.2s;
+  transition: box-shadow ease 0.2s;
+  transition: box-shadow ease 0.2s, -webkit-box-shadow ease 0.2s;
   z-index: 2;
 }
 .item-catalog .cat-hover-wrap:before {
@@ -1495,13 +1495,30 @@ body {
   }
 }
 @media (min-width: 1024px) {
+  .item-catalog:before {
+    content: "";
+    display: block;
+    -webkit-box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.07);
+            box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.07);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    -webkit-transition: opacity ease 0.2s;
+    transition: opacity ease 0.2s;
+  }
   .item-catalog:hover {
     z-index: 2;
-    -webkit-box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
-            box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+  }
+  .item-catalog:hover:before {
+    opacity: 1;
   }
   .item-catalog:hover .cat-hover-wrap {
     display: block;
+    -webkit-box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.07);
+            box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.07);
   }
 }
 /* ----------------------------------- *\
