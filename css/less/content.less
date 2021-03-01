@@ -10,6 +10,7 @@
     transition: box-shadow ease 0.2s;
     .cat-photo-wrap,
     .cat-title-wrap,
+    .cat-price-wrap,
     .cat-features-wrap,
     .cat-action-wrap,
     .cat-photo,
@@ -74,6 +75,7 @@
         line-height: 35px;
         font-weight: bold;
         text-transform: uppercase;
+        padding-right: 40px;
     }
     .cat-photo {
         overflow: hidden;
@@ -146,6 +148,20 @@
             margin: 0 10px 0 0;
         }
     }
+    .btn-action-ico {
+        &.ico-fav {
+            position: absolute;
+            bottom: 0;
+            right: 20px;
+            z-index: 2;
+            height: 51px;
+            width: 50px;
+            &:after {
+                background-image: url(../img/icons/ico-fav-activated.svg);
+                background-size: 26px auto;
+            }
+        }
+    }
 }
 @media (max-width: 1023px) {
     .item-catalog {
@@ -171,6 +187,11 @@
         }
         .cat-price {
             font-size: 20px;
+        }
+        .btn-action-ico {
+            &.ico-fav {
+                right: 0;
+            }
         }
     }
 }
