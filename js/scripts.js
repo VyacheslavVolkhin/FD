@@ -20,6 +20,65 @@ $(document).ready(function(){
 	  return this;
 	};
 
+
+	//main menu
+    $('.js-menu-toggle').on('click', function() {
+        $('body').toggleClass('nav-show');
+        $('.js-menu-toggle').toggleClass('active');
+        return false;
+    })
+    $('.nav').hover(function() {
+        $(this).addClass('active');
+    }, function() {
+        $(this).removeClass('active');
+        $(this).removeClass('submenu-active');
+        $(this).find('.submenu-wrap').removeClass('active');
+        $(this).find('li.open').removeClass('open');
+        $('.nav li:not(.open) .menu-item').css('background', 'transparent');
+    })
+    $('.nav .btn-action-ico.ico-back').on('click', function() {
+        $('.nav').removeClass('active');
+        $('.nav').removeClass('submenu-active');
+        $('.nav').find('.submenu-wrap').removeClass('active');
+        $('.nav').find('li.open').removeClass('open');
+        $('.nav li:not(.open) .menu-item').css('background', 'transparent');
+        return false;
+    })
+    $('.main-menu-wrap .menu-item').on('click', function() {
+        let curMenu = $(this).parent().attr('data-submenu');
+        $('.nav li.open').removeClass('open');
+        $(this).parent().addClass('open');
+        $('.nav').addClass('submenu-active').find('.submenu-wrap').removeClass('active');
+        $('.nav .submenu-wrap[data-submenu="'+curMenu+'"]').addClass('active');
+        $('.nav li:not(.open) .menu-item').css('background', 'transparent');
+        return false;
+    })
+    $('.main-menu-wrap [data-bg]').each(function() {
+        let bgColor = $(this).attr('data-bg');
+        let bgPrevColor = 0;
+        let hoverMenu = $(this).attr('data-submenu');
+        $('.nav .submenu-wrap[data-submenu="'+hoverMenu+'"]').css('background', bgColor);
+        $(this).hover(function() {
+            bgPrevColor = $('.nav li.open').attr('data-bg');
+            $(this).find('.menu-item').css('background', bgColor);
+            $('.submenu-outer-wrap').css('background', bgPrevColor);
+            console.log(bgPrevColor)
+        }, function() {
+            if ($(this).hasClass('open')) {
+                $(this).find('.menu-item').css('background', bgColor);
+            } else {
+                $('.nav li:not(.open) .menu-item').css('background', 'transparent');
+            }
+        })
+    })
+
+
+    //btn tgl
+    $('.js-btn-tgl').on('click', function () {
+        $(this).toggleClass('active');
+        return false;
+    })
+
 	//popup block
 	$('.js-popup-wrap .js-btn-toggle').on('click touchstart', function() {
 		if ($(this).hasClass('active')) {
