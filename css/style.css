@@ -1415,7 +1415,7 @@ body {
   transition: -webkit-box-shadow ease 0.2s;
   transition: box-shadow ease 0.2s;
   transition: box-shadow ease 0.2s, -webkit-box-shadow ease 0.2s;
-  z-index: 2;
+  z-index: 3;
 }
 .item-catalog .cat-hover-wrap:before {
   content: "";
@@ -1433,6 +1433,9 @@ body {
 }
 .item-catalog .cat-price-wrap {
   padding: 7px 24px 8px 24px;
+  position: relative;
+  z-index: 4;
+  background: #fff;
 }
 .item-catalog .cat-subtitle {
   font-size: 12px;
@@ -1586,7 +1589,7 @@ body {
     transition: opacity ease 0.2s;
   }
   .item-catalog:hover {
-    z-index: 2;
+    z-index: 5;
   }
   .item-catalog:hover:before {
     opacity: 1;
@@ -2166,7 +2169,7 @@ body {
   }
   .catalog-box .item-wrap {
     padding: 0;
-    margin: 0;
+    margin: 0 0 20px 0;
   }
   .main-top-box {
     margin-left: -48px;

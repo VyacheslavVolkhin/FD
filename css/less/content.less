@@ -40,7 +40,7 @@
         background: #fff;
         padding: 0 24px 64px 20px;
         transition: box-shadow ease 0.2s;
-        z-index: 2;
+        z-index: 3;
         &:before {
             content: "";
             display: block;
@@ -58,6 +58,9 @@
     }
     .cat-price-wrap {
         padding: 7px 24px 8px 24px;
+        position: relative;
+        z-index: 4;
+        background: #fff;
     }
     .cat-subtitle {
         font-size: 12px;
@@ -211,7 +214,7 @@
         .cat-hover-wrap {
         }
         &:hover {
-            z-index: 2;
+            z-index: 5;
             &:before {
                 opacity: 1;
             }
@@ -723,13 +726,14 @@
         padding-top: 28px;
         transition: all ease 0.2s;
     }
+
     .catalog-box {
         .items-wrap {
             margin: 0 -24px;
         }
         .item-wrap {
             padding: 0;
-            margin: 0;
+            margin: 0 0 20px 0;
         }
     }
     .main-top-box {
