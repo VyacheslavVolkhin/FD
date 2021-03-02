@@ -294,6 +294,18 @@
             }
         }
     }
+    .btn-action-ico {
+        &.ico-close {
+            width: 40px;
+            height: 40px;
+            position: fixed;
+            top: 0;
+            right: 0;
+            z-index: 20;
+            box-shadow: none;
+            border-radius: 0;
+        }
+    }
 }
 .sections-box {
     display: flex;
@@ -579,6 +591,20 @@
         .main-filter-wrap {
             display: block;
         }
+    }
+    .main-filter-wrap {
+        display: none;
+        animation: fadeinslide ease 0.2s;
+        padding-right: 10px;
+        position: fixed;
+        padding-top: 50px;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        overflow: auto;
+        z-index: 150;
+        background: #fff;
     }
     .sections-box {
         margin: 0 -20px 40px -20px;

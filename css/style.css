@@ -700,6 +700,9 @@ body {
   width: 100%;
 }
 @media (max-width: 1023px) {
+  .filter-show {
+    overflow: hidden;
+  }
   .nav-show {
     overflow: hidden;
   }
@@ -1656,6 +1659,17 @@ body {
 .main-filter-wrap .content-hidden-wrap .frm-select-color:first-child {
   margin-top: 0;
 }
+.main-filter-wrap .btn-action-ico.ico-close {
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 20;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-radius: 0;
+}
 .sections-box {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1988,6 +2002,21 @@ body {
 @media (max-width: 1023px) {
   .filter-show .main-filter-wrap {
     display: block;
+  }
+  .main-filter-wrap {
+    display: none;
+    -webkit-animation: fadeinslide ease 0.2s;
+            animation: fadeinslide ease 0.2s;
+    padding-right: 10px;
+    position: fixed;
+    padding-top: 50px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: auto;
+    z-index: 150;
+    background: #fff;
   }
   .sections-box {
     margin: 0 -20px 40px -20px;
