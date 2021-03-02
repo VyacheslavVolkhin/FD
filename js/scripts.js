@@ -55,6 +55,7 @@ $(document).ready(function(){
     }, function() {
         $(this).removeClass('active');
         $(this).removeClass('submenu-active');
+        $('body').removeClass('body-submenu-active');
         $(this).find('.submenu-wrap').removeClass('active');
         $(this).find('li.open').removeClass('open');
         $('.nav li:not(.open) .menu-item').css('background', 'transparent');
@@ -71,6 +72,7 @@ $(document).ready(function(){
         } else {
             $('.nav').removeClass('active');
             $('.nav').removeClass('submenu-active');
+            $('body').removeClass('body-submenu-active');
             $('.nav').find('.submenu-wrap').removeClass('active');
             $('.nav').find('li.open').removeClass('open');
             $('.nav li:not(.open) .menu-item').css('background', 'transparent');
@@ -82,6 +84,7 @@ $(document).ready(function(){
         $('.nav li.open').removeClass('open');
         $(this).parent().addClass('open');
         $('.nav').addClass('submenu-active').find('.submenu-wrap').removeClass('active');
+        $('body').addClass('body-submenu-active');
         $('.nav .submenu-wrap[data-submenu="'+curMenu+'"]').addClass('active');
         $('.nav li:not(.open) .menu-item').css('background', 'transparent');
 

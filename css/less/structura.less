@@ -523,6 +523,20 @@ html, body {
         .nav {
             display: flex;
         }
+        &.body-submenu-active {
+            .nav {
+                .btn-action-ico.ico-menu {
+                    z-index: 9999;
+                    opacity: 1;
+                    left: auto;
+                    right: 0px;
+                    top: 0px;
+                    width: 48px;
+                    height: 67px;
+                    margin: 0;
+                }
+            }
+        }
     }
     .header {
         .btn-action-ico {
