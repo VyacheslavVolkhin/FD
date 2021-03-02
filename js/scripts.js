@@ -21,6 +21,21 @@ $(document).ready(function(){
 	};
 
 
+	//filter
+    $('.js-btn-filter-toggle').on('click', function() {
+        $('body').toggleClass('filter-show');
+        return false;
+    })
+    $('.main-filter-wrap .content-link-wrap a').on('click', function() {
+        if ($(this).parents('.filter-section-wrap').hasClass('active')) {
+            $(this).parents('.filter-section-wrap').removeClass('active').find('.content-hidden-wrap').slideUp(200);
+        } else {
+            $(this).parents('.filter-section-wrap').addClass('active').find('.content-hidden-wrap').slideDown(200);
+        }
+        return false;
+    })
+
+
 	//img to bg
     $('.js-bg-box').each(function() {
         var picUrl = $(this).find('.js-bg-photo').attr('src');
@@ -193,5 +208,88 @@ $(document).ready(function(){
 			$(this).addClass('active').next('.js-tab-content').slideDown(200);
 		}
 	})
+
+    //range slider
+    $('#range-price').slider({
+        range: true,
+        min: 1550,
+        max: 5000,
+        values: [1550, 3500],
+        slide: function( event, ui ) {
+            $('#price-min').val(ui.values[0]);
+            $('#price-max').val(ui.values[1]);
+        }
+    })
+    $('#price-min').val($('#range-price').slider('values', 0));
+    $('#price-max').val($('#range-price').slider('values', 1));
+    $('#price-min').bind('focusout', function() {
+        if ($(this).val()>$('#range-price').slider('values', 1)) {
+            $(this).val($('#range-price').slider('values', 0));
+        }
+        $('#range-price').slider('values', 0, $(this).val());
+    })
+    $('#price-max').bind('focusout', function() {
+        if ($(this).val()<$('#range-price').slider('values', 0)) {
+            $(this).val($('#range-price').slider('values', 1));
+        }
+        $('#range-price').slider('values', 1, $(this).val());
+    })
+    $('#price-min').bind('keypress', function(e) {
+        if (e.keyCode==13) {
+            if ($(this).val()>$('#range-price').slider('values', 1)) {
+                $(this).val($('#range-price').slider('values', 0));
+            }
+            $('#range-price').slider('values', 0, $(this).val());
+        }
+    })
+    $('#price-max').bind('keypress', function(e) {
+        if (e.keyCode==13) {
+            if ($(this).val()<$('#range-price').slider('values', 0)) {
+                $(this).val($('#range-price').slider('values', 1));
+            }
+            $('#range-price').slider('values', 1, $(this).val());
+        }
+    })
+    $('#range-size').slider({
+        range: true,
+        min: 1550,
+        max: 5000,
+        values: [1550, 3500],
+        slide: function( event, ui ) {
+            $('#size-min').val(ui.values[0]);
+            $('#size-max').val(ui.values[1]);
+        }
+    })
+    $('#size-min').val($('#range-size').slider('values', 0));
+    $('#size-max').val($('#range-size').slider('values', 1));
+    $('#size-min').bind('focusout', function() {
+        if ($(this).val()>$('#range-size').slider('values', 1)) {
+            $(this).val($('#range-size').slider('values', 0));
+        }
+        $('#range-size').slider('values', 0, $(this).val());
+    })
+    $('#size-max').bind('focusout', function() {
+        if ($(this).val()<$('#range-size').slider('values', 0)) {
+            $(this).val($('#range-size').slider('values', 1));
+        }
+        $('#range-size').slider('values', 1, $(this).val());
+    })
+    $('#size-min').bind('keypress', function(e) {
+        if (e.keyCode==13) {
+            if ($(this).val()>$('#range-size').slider('values', 1)) {
+                $(this).val($('#range-size').slider('values', 0));
+            }
+            $('#range-size').slider('values', 0, $(this).val());
+        }
+    })
+    $('#size-max').bind('keypress', function(e) {
+        if (e.keyCode==13) {
+            if ($(this).val()<$('#range-size').slider('values', 0)) {
+                $(this).val($('#range-size').slider('values', 1));
+            }
+            $('#range-size').slider('values', 1, $(this).val());
+        }
+    })
+    $('#widget').draggable();
 	
 });

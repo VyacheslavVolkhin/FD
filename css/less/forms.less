@@ -1,6 +1,7 @@
 /* ----------------------------------- *\
 			forms elements styles
 \* ----------------------------------- */
+select,
 textarea,
 input[type="text"],
 input[type="password"],
@@ -10,7 +11,47 @@ input[type="range"],
 input[type="search"],
 input[type="tel"],
 input[type="url"] {
-	
+    border: 1px solid var(--clr-border);
+    height: 40px;
+    padding: 0 10px 0 15px;
+    font-size: 16px;
+    color: var(--clr-base);
+	&.inp-clear {
+        display: block;
+        height: 24px;
+        padding: 0 20px 0 0px;
+        font-size: 14px;
+        border-radius: 0;
+        border: none;
+        box-shadow: none;
+        background-color: transparent;
+    }
+}
+select {
+	display: block;
+	width: 100%;
+	padding-right: 0;
+	background-color: #fff;
+	background-image: url(../img/main/select.png);
+	background-position: right center;
+	background-repeat: no-repeat;
+	-moz-appearance: none;
+	-ms-appearance: none;
+	-webkit-appearance: none;
+	appearance: none!important;
+	line-height: 1em;
+	text-indent: 0.01px;
+	text-overflow: '';
+	outline: none;
+    &.inp-clear {
+        padding-right: 20px;
+        background-image: url(../img/icons/ico-arrow02.svg);
+        background-size: 10px auto;
+        background-position: right center;
+    }
+}
+select::-ms-expand {
+	display: none;
 }
 textarea {
 	height: 100px;
@@ -299,6 +340,22 @@ input[type="submit"] {
         position: relative;
     }
 }
+.frm-field-range {
+    line-height: 1;
+    position: relative;
+    padding-bottom: 11px;
+    .range-fields-wrap {
+        display: flex;
+        margin: 0 0 27px 0;
+    }
+    .range-field {
+        padding: 0 4px 0 0;
+        width: 50%;
+        &+.range-field {
+            padding: 0 0 0 4px;
+        }
+    }
+}
 .frm-row,
 .frm-field,
 .frm-row-submit {
@@ -306,6 +363,7 @@ input[type="submit"] {
 	line-height: 1;
 	&:after {content: ".";display: block;height: 0;clear: both;visibility: hidden;font-size: 0;}
 }
+.frm-select-color,
 .frm-select {
 	position: relative;
 	display: block;
@@ -324,6 +382,75 @@ input[type="submit"] {
 		position: relative;
 		cursor: pointer;
 	}
+}
+.frm-select-color,
+.frm-select {
+    font-size: 14px;
+    input:checked~label:after {
+        opacity: 1;
+    }
+    label {
+        line-height: 20px;
+        padding-left: 36px;
+        min-height: 20px;
+        &:before, &:after {
+            content: "";
+            display: block;
+            width: 16px;
+            height: 16px;
+            border: 1px solid #ddd;
+            position: absolute;
+            top: 10px;
+            left: 0;
+            margin-top: -8px;
+        }
+        &:after {
+            border: none;
+            opacity: 0;
+            background: url(../img/icons/ico-check.svg) center no-repeat;
+            background-size: 12px auto;
+        }
+    }
+    .lbl-color {
+        display: block;
+        width: 24px;
+        height: 24px;
+        top: 12px;
+        left: 0;
+        position: absolute;
+        margin-top: -12px;
+        border-radius: 50%;
+        box-shadow: 0px 5px 10px #ECECEC;
+        line-height: 1;
+        overflow: hidden;
+        img {
+            display: block;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;margin: auto;
+            width: 100%;
+        }
+    }
+    .lbl-title {
+        padding: 2px 0 2px 4px;
+        display: block;
+    }
+}
+.frm-select-color {
+    overflow: visible;
+    label {
+        &:after {
+            width: 24px;
+            height: 24px;
+            margin-top: -12px;
+            top: 12px;
+        }
+        &:before {
+            display: none;
+        }
+    }
 }
 .frm-main-search {
     display: block;
@@ -355,6 +482,27 @@ input[type="submit"] {
         top: 0;
         left: 0;
         z-index: -1;
+    }
+}
+body {
+    .ui-slider {
+        height: 2px;
+        background: var(--clr-border);
+        .ui-slider-range {
+            background: var(--clr-base);
+        }
+        .ui-slider-handle {
+            cursor: pointer;
+            width: 24px;
+            height: 24px;
+            background: #fff;
+            top: 0;
+            margin-left: -12px;
+            margin-top: -11px;
+            border: 1px solid var(--clr-base);
+            border-radius: 50%;
+            outline: none;
+        }
     }
 }
 @media (max-width: 1023px) {
