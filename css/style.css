@@ -717,7 +717,7 @@ body {
     left: auto;
     right: 0px;
     top: 0px;
-    width: 48px;
+    width: 40px;
     height: 67px;
     margin: 0;
   }
@@ -818,6 +818,22 @@ body {
   .submenu-outer-wrap .btn-action-ico.ico-back {
     display: block;
   }
+  .submenu-last-outer-wrap .submenu-title,
+  .submenu-outer-wrap .submenu-title {
+    padding-left: 44px;
+  }
+  .submenu-last-outer-wrap .menu-title,
+  .submenu-outer-wrap .menu-title,
+  .submenu-last-outer-wrap .menu-title-inner,
+  .submenu-outer-wrap .menu-title-inner {
+    padding-right: 40px;
+  }
+  .submenu-last-outer-wrap .menu-title:before,
+  .submenu-outer-wrap .menu-title:before,
+  .submenu-last-outer-wrap .menu-title-inner:before,
+  .submenu-outer-wrap .menu-title-inner:before {
+    right: 20px;
+  }
   .submenu-last-outer-wrap {
     left: 100%;
     width: 100%;
@@ -831,6 +847,10 @@ body {
   }
   .main-menu-wrap .menu-title {
     padding-left: 110px;
+    padding-right: 40px;
+  }
+  .main-menu-wrap .menu-title:before {
+    right: 20px;
   }
   .main-menu-wrap .menu-ico {
     left: 54px;

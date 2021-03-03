@@ -531,7 +531,7 @@ html, body {
                     left: auto;
                     right: 0px;
                     top: 0px;
-                    width: 48px;
+                    width: 40px;
                     height: 67px;
                     margin: 0;
                 }
@@ -624,6 +624,16 @@ html, body {
                 display: block;
             }
         }
+        .submenu-title {
+            padding-left: 44px;
+        }
+        .menu-title,
+        .menu-title-inner {
+            padding-right: 40px;
+            &:before {
+                right: 20px;
+            }
+        }
     }
     .submenu-last-outer-wrap {
         left: 100%;
@@ -639,6 +649,10 @@ html, body {
         }
         .menu-title {
             padding-left: 110px;
+            padding-right: 40px;
+            &:before {
+                right: 20px;
+            }
         }
         .menu-ico {
             left: 54px;
