@@ -55,7 +55,7 @@
                         </div>
                     </div>
                     <div class="messages-wrap">
-                        <a href="" class="btn-action-ico button-messages">
+                        <a href="" class="btn-action-ico button-messages ms-viber">
                             <img src="./img/icons/ico-viber.svg" alt="">
                         </a>
                         <a href="" class="btn-action-ico button-messages">
@@ -120,10 +120,9 @@
                 </a>
             </div>
             <div class="search-wrap">
-                <form action="/" class="frm-main-search">
-                    <input type="text" placeholder="Поиск по сайту">
-                    <button type="submit"></button>
-                </form>
+                <a href="" class="btn-action-search js-btn-popup-search">
+                    <span class="button-title">Поиск по сайту</span>
+                </a>
             </div>
             <div class="main-menu-wrap">
                 <ul>
@@ -912,7 +911,7 @@
                         </table>
                     </div>
                     <div class="info-link-wrap">
-                        <a href="" class="link-main">Все параметры</a>
+                        <a href="#settings" class="link-main js-anchor-button">Все параметры</a>
                     </div>
                     <div class="items-wrap">
                         <div class="item-wrap">
@@ -1015,7 +1014,9 @@
                 <div class="card-oneclick-wrap">
                     <h2 class="main-page-title">Westerhof Celebrity 3171-2</h2>
                     <div class="form-wrap">
-                        <div class="field-phone">+7 926 666 55 22</div>
+                        <div class="field-phone">
+                            <input type="tel" value="+7 926 666 55 22">
+                        </div>
                         <div class="field-button">
                             <a href="" class="btn button-second">Заказать в один клик</a>
                         </div>
@@ -1372,7 +1373,7 @@
             <!--/diller-box-->
 
             <!--settings-box-->
-            <div class="settings-box bg-box">
+            <div class="settings-box bg-box" id="settings">
                 <h2 class="main-page-title"> Параметры Westerhof Celebrity</h2>
                 <div class="items-wrap">
                     <!--item wrap-->
@@ -1393,13 +1394,13 @@
                             <div class="st-row row-tags">
                                 <div class="row-title">Назначение</div>
                                 <div class="row-value">
-                                    <div class="elm-tag">Дом</div>
-                                    <div class="elm-tag">Ресторан</div>
-                                    <div class="elm-tag">Офис</div>
-                                    <div class="elm-tag">Дом</div>
-                                    <div class="elm-tag">Спортивный зал</div>
-                                    <div class="elm-tag">Дом</div>
-                                    <div class="elm-tag">Ресторан</div>
+                                    <a href="" class="elm-tag">Дом</a>
+                                    <a href="" class="elm-tag">Ресторан</a>
+                                    <a href="" class="elm-tag">Офис</a>
+                                    <a href="" class="elm-tag">Дом</a>
+                                    <a href="" class="elm-tag">Спортивный зал</a>
+                                    <a href="" class="elm-tag">Дом</a>
+                                    <a href="" class="elm-tag">Ресторан</a>
                                 </div>
                             </div>
                         </div>
@@ -1423,13 +1424,13 @@
                             <div class="st-row row-tags">
                                 <div class="row-title">Назначение</div>
                                 <div class="row-value">
-                                    <div class="elm-tag">Дом</div>
-                                    <div class="elm-tag">Ресторан</div>
-                                    <div class="elm-tag">Офис</div>
-                                    <div class="elm-tag">Дом</div>
-                                    <div class="elm-tag">Спортивный зал</div>
-                                    <div class="elm-tag">Дом</div>
-                                    <div class="elm-tag">Ресторан</div>
+                                    <a href="" class="elm-tag">Дом</a>
+                                    <a href="" class="elm-tag">Ресторан</a>
+                                    <a href="" class="elm-tag">Офис</a>
+                                    <a href="" class="elm-tag">Дом</a>
+                                    <a href="" class="elm-tag">Спортивный зал</a>
+                                    <a href="" class="elm-tag">Дом</a>
+                                    <a href="" class="elm-tag">Ресторан</a>
                                 </div>
                             </div>
                         </div>
@@ -1453,13 +1454,13 @@
                             <div class="st-row row-tags">
                                 <div class="row-title">Назначение</div>
                                 <div class="row-value">
-                                    <div class="elm-tag">Дом</div>
-                                    <div class="elm-tag">Ресторан</div>
-                                    <div class="elm-tag">Офис</div>
-                                    <div class="elm-tag">Дом</div>
-                                    <div class="elm-tag">Спортивный зал</div>
-                                    <div class="elm-tag">Дом</div>
-                                    <div class="elm-tag">Ресторан</div>
+                                    <a href="" class="elm-tag">Дом</a>
+                                    <a href="" class="elm-tag">Ресторан</a>
+                                    <a href="" class="elm-tag">Офис</a>
+                                    <a href="" class="elm-tag">Дом</a>
+                                    <a href="" class="elm-tag">Спортивный зал</a>
+                                    <a href="" class="elm-tag">Дом</a>
+                                    <a href="" class="elm-tag">Ресторан</a>
                                 </div>
                             </div>
                         </div>
@@ -1665,6 +1666,136 @@
 
     </div>
     <!-- /wrap -->
+
+
+    <div id="popup-search">
+        <form action="/" class="frm-popup">
+            <div class="main-page-title">Поиск по сайту</div>
+            <div class="frm-main-search">
+                <input type="text" placeholder="Введите запрос">
+                <button type="submit"></button>
+            </div>
+            <div class="search-results-wrap">
+                <a href="" class="item-search-result">
+                    <span class="rs-photo">
+                        <img src="./img/cat01.jpg" alt="">
+                    </span>
+                    <span class="rs-text-wrap">
+                        <span class="rs-title">Заголовок блока</span>
+                        <span class="rs-text">Lorem adipisicing elit.</span>
+                    </span>
+                </a>
+                <a href="" class="item-search-result">
+                    <span class="rs-photo">
+                        <img src="./img/cat01.jpg" alt="">
+                    </span>
+                    <span class="rs-text-wrap">
+                        <span class="rs-title">Заголовок блока</span>
+                        <span class="rs-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+                    </span>
+                </a>
+                <a href="" class="item-search-result">
+                    <span class="rs-photo">
+                        <img src="./img/cat01.jpg" alt="">
+                    </span>
+                    <span class="rs-text-wrap">
+                        <span class="rs-title">Заголовок блока</span>
+                        <span class="rs-text">Lorem ipsum dolor sit amet, consectetur elit.</span>
+                    </span>
+                </a>
+                <a href="" class="item-search-result">
+                    <span class="rs-photo">
+                        <img src="./img/cat01.jpg" alt="">
+                    </span>
+                    <span class="rs-text-wrap">
+                        <span class="rs-title">Заголовок блока</span>
+                        <span class="rs-text">Lorem ipsum dolor sit elit.</span>
+                    </span>
+                </a>
+                <a href="" class="item-search-result">
+                    <span class="rs-photo">
+                        <img src="./img/cat01.jpg" alt="">
+                    </span>
+                    <span class="rs-text-wrap">
+                        <span class="rs-title">Заголовок блока</span>
+                        <span class="rs-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+                    </span>
+                </a>
+                <a href="" class="item-search-result">
+                    <span class="rs-photo">
+                        <img src="./img/cat01.jpg" alt="">
+                    </span>
+                    <span class="rs-text-wrap">
+                        <span class="rs-title">Заголовок блока</span>
+                        <span class="rs-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+                    </span>
+                </a>
+                <a href="" class="item-search-result">
+                    <span class="rs-photo">
+                        <img src="./img/cat01.jpg" alt="">
+                    </span>
+                    <span class="rs-text-wrap">
+                        <span class="rs-title">Заголовок блока</span>
+                        <span class="rs-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+                    </span>
+                </a>
+                <a href="" class="item-search-result">
+                    <span class="rs-photo">
+                        <img src="./img/cat01.jpg" alt="">
+                    </span>
+                    <span class="rs-text-wrap">
+                        <span class="rs-title">Заголовок блока</span>
+                        <span class="rs-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+                    </span>
+                </a>
+                <a href="" class="item-search-result">
+                    <span class="rs-photo">
+                        <img src="./img/cat01.jpg" alt="">
+                    </span>
+                    <span class="rs-text-wrap">
+                        <span class="rs-title">Заголовок блока</span>
+                        <span class="rs-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+                    </span>
+                </a>
+                <a href="" class="item-search-result">
+                    <span class="rs-photo">
+                        <img src="./img/cat01.jpg" alt="">
+                    </span>
+                    <span class="rs-text-wrap">
+                        <span class="rs-title">Заголовок блока</span>
+                        <span class="rs-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+                    </span>
+                </a>
+                <a href="" class="item-search-result">
+                    <span class="rs-photo">
+                        <img src="./img/cat01.jpg" alt="">
+                    </span>
+                    <span class="rs-text-wrap">
+                        <span class="rs-title">Заголовок блока</span>
+                        <span class="rs-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+                    </span>
+                </a>
+                <a href="" class="item-search-result">
+                    <span class="rs-photo">
+                        <img src="./img/cat01.jpg" alt="">
+                    </span>
+                    <span class="rs-text-wrap">
+                        <span class="rs-title">Заголовок блока</span>
+                        <span class="rs-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+                    </span>
+                </a>
+                <a href="" class="item-search-result">
+                    <span class="rs-photo">
+                        <img src="./img/cat01.jpg" alt="">
+                    </span>
+                    <span class="rs-text-wrap">
+                        <span class="rs-title">Заголовок блока</span>
+                        <span class="rs-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+                    </span>
+                </a>
+            </div>
+        </form>
+    </div>
 
     <link rel="stylesheet" href="./css/jquery-ui.min.css" />
     <link rel="stylesheet" href="./css/jquery-ui.structure.min.css" />

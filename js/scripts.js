@@ -21,6 +21,17 @@ $(document).ready(function(){
 	};
 
 
+    //animate anchor scroll
+    $('.js-anchor-button').on("click", function (e) {
+        var anchor = $(this);
+        $('html, body').stop().animate({
+            scrollTop: $(anchor.attr('href')).offset().top - 100
+        }, 1000);
+        e.preventDefault();
+        return false;
+    });
+
+
 	//tooltip
     $('.js-tooltip[title]').tooltip();
 
@@ -232,6 +243,24 @@ $(document).ready(function(){
 			$(this).addClass('active').next('.js-tab-content').slideDown(200);
 		}
 	})
+
+
+    //popup search
+    $('#popup-search').dialog({
+        autoOpen: false,
+        modal: true,
+        resizable: false,
+        draggable: false,
+        width: 300,
+        show: {effect: "fade", duration: 400},
+        hide: {effect: "fade", duration: 400},
+        dialogClass: '',
+        title: ''
+    })
+    $('.js-btn-popup-search').on('click', function () {
+        $('#popup-search').dialog('open');
+        return false;
+    })
 
 
     $('.catalog-slider-box .slider').owlCarousel({
