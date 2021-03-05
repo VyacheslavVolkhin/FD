@@ -21,6 +21,27 @@ $(document).ready(function(){
 	};
 
 
+	//tooltip
+    $('.js-tooltip[title]').tooltip();
+
+
+    //frm counter
+    $('.js-counter .js-button-counter-minus').on('click', function () {
+        var cnt = $(this).parents('.js-counter').find('.js-input-counter').val();
+        cnt = parseInt(cnt);
+        if (cnt > 0) {
+            $(this).parents('.js-counter').find('.js-input-counter').val(cnt - 1);
+        }
+        return false;
+    })
+    $('.js-counter .js-button-counter-plus').on('click', function () {
+        var cnt = $(this).parents('.js-counter').find('.js-input-counter').val();
+        $(this).parents('.js-counter').find('.js-input-counter').val(cnt - 1 + 2);
+        return false;
+    })
+
+
+
 	//filter
     $('.js-btn-filter-toggle').on('click', function() {
         $('body').toggleClass('filter-show');
@@ -212,6 +233,25 @@ $(document).ready(function(){
 		}
 	})
 
+
+    $('.catalog-slider-box .slider').owlCarousel({
+        items: 1,
+        loop: false,
+        nav: true,
+        dots: true,
+        smartSpeed: 1000,
+        fluidSpeed: 1000,
+        autoplaySpeed: 1000,
+        navSpeed: 1000,
+        dotsSpeed: 1000,
+        dragEndSpeed: 1000,
+        responsiveRefreshRate: 100,
+        autoHeight: false,
+        autoplay: false,
+        autoplayTimeout: 5000,
+        autoWidth: true
+    })
+
     //range slider
     $('#range-price').slider({
         range: true,
@@ -295,4 +335,28 @@ $(document).ready(function(){
     })
     $('#widget').draggable();
 	
+});
+$(window).on('load', function () {
+    $('[data-fancybox]').fancybox({
+        onComplete: function () {
+            $('.fancybox-button--left').each(function () {
+                $(this).attr('title', 'Предыдущая');
+            })
+            $('.fancybox-button--play').each(function () {
+                $(this).attr('title', 'Слайдшоу (P)');
+            })
+            $('.fancybox-button--right').each(function () {
+                $(this).attr('title', 'Следующая');
+            })
+            $('.fancybox-button--fullscreen').each(function () {
+                $(this).attr('title', 'На весь экран (F)');
+            })
+            $('.fancybox-button--thumbs').each(function () {
+                $(this).attr('title', 'Предосмотр (G)');
+            })
+            $('.fancybox-button--close').each(function () {
+                $(this).attr('title', 'Закрыть (Esc)');
+            })
+        }
+    })
 });

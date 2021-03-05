@@ -62,25 +62,53 @@ textarea {
 .btn,
 button,
 input[type="submit"] {
-	
+    display: flex;
+    height: 64px;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+    position: relative;
+	&.button-second {
+        background: #E2F1FF;
+        color: #000;
+        &:hover {
+            background: #E2F1FF - #111;
+            color: #000;
+        }
+        &.button-light {
+            background: #fff;
+            &:hover {
+                background: #fff - #111;
+            }
+        }
+    }
 }
 .btn-action-ico {
-	background: none;
-	border: none;
-	box-shadow: none;
-	min-width: 0;
-	border-radius: 0;
-	padding: 0;
-	margin: 0;
-	font-size: 0;
-	display: block;
-	position: relative;
-	overflow: hidden;
-	width: 40px;height: 40px;
-	text-align: center;
-	line-height: 40px;
-	text-decoration: none;
-	transition: all ease 0.2s;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    width: 40px;height: 40px;
+    text-align: center;
+    line-height: 40px;
+    text-decoration: none;
+    transition: all ease 0.2s;
+    box-shadow: none;
+    min-width: 0;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+    font-size: 0;
+    &:not(.btn) {
+        border: none;
+        background: none;
+    }
+    &.btn {
+        &:before, &:after, img {
+        }
+    }
 	&:before, &:after, .i, img {
 		display: block;
 		position: absolute;
@@ -98,9 +126,11 @@ input[type="submit"] {
 	}
 	&:hover {
 		text-decoration: none;
-		background: none;
-		box-shadow: none;
-        filter: brightness(1.2);
+        &:not(.btn) {
+            filter: brightness(1.2);
+            box-shadow: none;
+            background: none;
+        }
 	}
     &.button-messages {
         img {
@@ -166,6 +196,12 @@ input[type="submit"] {
             &:after {
                 opacity: 1;
             }
+        }
+    }
+    &.ico-cart-add {
+        &:before {
+            background-image: url(../img/icons/ico-cart-add.svg);
+            background-size: 28px auto;
         }
     }
     &.ico-phone {
@@ -318,6 +354,25 @@ input[type="submit"] {
             float: left;
         }
     }
+    &.ico-plus, &.ico-minus {
+        &:before, &:after {
+            width: 12px;
+            height: 2px;
+            top: 50%;
+            left: 50%;
+            right: auto;bottom: auto;
+            margin: -1px 0 0 -6px;
+            background: #000;
+        }
+        &:before {
+            .t-rotate(90deg);
+        }
+    }
+    &.ico-minus {
+        &:before {
+            display: none;
+        }
+    }
 }
 .btn-action-header {
     display: block;
@@ -338,6 +393,36 @@ input[type="submit"] {
         line-height: 20px;
         overflow: hidden;
         position: relative;
+    }
+}
+.frm-counter {
+    display: block;
+    position: relative;
+    padding: 0 50px;
+    height: 48px;
+    line-height: 1;
+    border: 1px solid var(--clr-border);
+    input {
+        display: block;
+        height: 46px;
+        text-align: center;
+        font-size: 22px;
+        font-weight: bold;
+        padding: 0;
+        border: 1px solid var(--clr-border);
+        border-top: none;
+        border-bottom: none;
+    }
+    .btn-action-ico {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50px;
+        height: 46px;
+        &.ico-plus {
+            left: auto;
+            right: 0;
+        }
     }
 }
 .frm-field-range {
@@ -449,6 +534,32 @@ input[type="submit"] {
         }
         &:before {
             display: none;
+        }
+    }
+}
+.frm-select {
+    &.select-round {
+        label {
+            padding-left: 36px;
+            min-height: 24px;
+            padding-top: 2px;
+            &:before {
+                width: 24px;
+                height: 24px;
+                border-radius: 50%;
+                margin-top: -12px;
+                top: 12px;
+                border-color: #172638;
+            }
+            &:after {
+                width: 10px;
+                height: 10px;
+                top: 12px;
+                left: 12px;
+                margin: -5px 0 0 -5px;
+                border-radius: 50%;
+                background: #172638;
+            }
         }
     }
 }

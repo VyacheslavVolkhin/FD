@@ -77,6 +77,135 @@
 .sl-wrap~.sl-wrap {
 	display: none;
 }
+.sl-wrap~.sl-wrap {
+	display: none;
+}
+.owl-item {
+	float: left;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0) scale(1.0, 1.0);
+}
+.owl-stage-outer,
+.owl-stage {
+	overflow: hidden;
+}
+.owl-carousel {
+	touch-action: manipulation;
+}
+.owl-slider-outer {
+	.owl-item {
+		opacity: 0;
+		transition: opacity ease 0.8s;
+		&.active {
+			opacity: 1;
+		}
+		&:not(.active) {
+			pointer-events: none;
+		}
+	}
+	.owl-stage, .owl-stage-outer {
+		overflow: visible;
+		&:after {content: ".";display: block;height: 0;clear: both;visibility: hidden;font-size: 0;}
+	}
+}
+.owl-slider-numbers-dots {
+	.owl-dots {
+		counter-reset: button;
+		&:after {
+			content: " / " attr(data-count);
+			display: inline-block;
+			vertical-align: middle;
+		}
+	}
+	.owl-dot {
+		display: inline-block;
+		vertical-align: middle;
+		width: 0;
+		overflow: hidden;
+		position: relative;
+		font-size: 1em;
+		color: inherit;
+		height: auto;
+		line-height: inherit;
+		&.active {
+			width: auto;
+		}
+		&:before {
+			content: counter(button);
+			counter-increment: button;
+		}
+	}
+}
+.owl-dots,
+.owl-nav {
+	&.disabled {
+		display: none;
+	}
+}
+.owl-prev, .owl-next, .owl-dot {
+	background: none;
+	border: none;
+	border-radius: 0;
+	min-width: 0;
+	padding: 0;
+	box-shadow: none;
+	font-size: 0;
+	&:hover {
+		background: none;
+		box-shadow: none;
+	}
+	&.disabled {
+		display: none;
+	}
+}
+.owl-prev, .owl-next,
+.btn-slider-prev,
+.btn-slider-next {
+	display: block;
+	width: 56px;height: 56px;
+	text-indent: -999px;
+	position: relative;
+	overflow: hidden;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.05);
+	&:before {
+		content: "";
+		position: absolute;
+		top: 0;bottom: 0;left: 0;right: 0;
+		margin: auto;
+		display: block;
+        background: url(../img/icons/ico-arrow01.svg) center no-repeat;
+        background-size: 6px auto;
+	}
+    &:hover {
+        box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
+        background: #ffff;
+    }
+}
+.owl-prev, .btn-slider-prev {
+	&:before {
+		.t-rotate(180deg);
+	}
+}
+.owl-dots {
+	display: block;
+	position: relative;
+	line-height: 1;
+	font-size: 0;
+	text-align: center;
+}
+.owl-dot {
+	display: inline-block;
+	vertical-align: top;
+	border-radius: 50%;
+	background: #000000;
+	width: 10px;height: 10px;
+	margin: 0 5px;
+	&:hover, &.active {
+		background: #000000+#222;
+	}
+}
 @media (max-width: 1023px) {
 	.elm-hidden-mobile {
 		display: none;
