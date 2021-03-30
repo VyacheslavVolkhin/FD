@@ -2021,6 +2021,97 @@ body {
 /* ----------------------------------- *\
 			content styles
 \* ----------------------------------- */
+.paging-load {
+  text-align: center;
+  line-height: 1;
+  font-size: 16px;
+  margin-bottom: 1.5em;
+}
+.paging-load .btn span {
+  margin-left: 6px;
+}
+.paging-total-count {
+  margin-bottom: 1em;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  text-align: center;
+  line-height: 1.1;
+  color: #8B929B;
+}
+ul.paging {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 0 2em 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  font-size: 16px;
+}
+ul.paging li {
+  margin: 0;
+  padding: 0;
+}
+ul.paging li:before {
+  display: none;
+}
+ul.paging a {
+  padding: 0 6px;
+  text-align: center;
+  display: block;
+  min-width: 30px;
+  height: 30px;
+  line-height: 32px;
+  position: relative;
+  overflow: hidden;
+  font-weight: 400;
+  color: var(--clr-base);
+}
+ul.paging a:hover,
+ul.paging a.active {
+  color: var(--clr-att);
+}
+ul.paging .prev a,
+ul.paging .next a {
+  width: 30px;
+  height: 30px;
+  display: block;
+  padding: 0;
+  position: relative;
+  opacity: 0.2;
+  -webkit-transition: opacity ease 0.2s;
+  transition: opacity ease 0.2s;
+}
+ul.paging .prev a.active,
+ul.paging .next a.active {
+  opacity: 1;
+}
+ul.paging .prev a:before,
+ul.paging .next a:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: url(../img/icons/ico-arrow02.svg) center no-repeat;
+  background-size: 14px auto;
+  -webkit-transform: -webkit-rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+ul.paging .next a:before {
+  -webkit-transform: -webkit-rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
 .catalog-slider-box {
   margin-bottom: 124px;
   padding: 60px 0 80px 124px;

@@ -618,6 +618,89 @@
 /* ----------------------------------- *\
 			content styles
 \* ----------------------------------- */
+.paging-load {
+    text-align: center;
+    line-height: 1;
+    font-size: 16px;
+    margin-bottom: 1.5em;
+    .btn {
+        span {
+            margin-left: 6px;
+        }
+    }
+}
+.paging-total-count {
+    margin-bottom: 1em;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    text-align: center;
+    line-height: 1.1;
+    color: #8B929B;
+}
+ul.paging {
+    display: flex;
+    align-items: center;
+    margin: 0 0 2em 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 16px;
+    li {
+        margin: 0;
+        padding: 0;
+        &:before {
+            display: none;
+        }
+    }
+    a {
+        padding: 0 6px;
+        text-align: center;
+        display: block;
+        min-width: 30px;
+        height: 30px;
+        line-height: 32px;
+        position: relative;
+        overflow: hidden;
+        font-weight: 400;
+        color: var(--clr-base);
+        &:hover, &.active {
+            color: var(--clr-att);
+        }
+    }
+    .prev, .next {
+        a {
+            width: 30px;
+            height: 30px;
+            display: block;
+            padding: 0;
+            position: relative;
+            opacity: 0.2;
+            transition: opacity ease 0.2s;
+            &.active {
+                opacity: 1;
+            }
+            &:before {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: url(../img/icons/ico-arrow02.svg) center no-repeat;
+                background-size: 14px auto;
+                .t-rotate(90deg);
+            }
+        }
+    }
+    .next {
+        a {
+            &:before {
+                .t-rotate(-90deg);
+            }
+        }
+    }
+}
 .catalog-slider-box {
     margin-bottom: 124px;
     padding: 60px 0 80px 124px;
